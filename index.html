@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>select</title>
+	<style type="text/css">
+		[data-width = 'salmon']{
+			width: 200px;
+			height: 200px;
+			background-color: salmon;
+		}
+		li:nth-child(1){
+			background-color: pink;
+		}/*选择第几个子元素*/
+		li:last-child{
+			background-color: salmon;
+		}/*选择最后一个子元素*/
+		
+		li p{
+			color: blue;
+		}/*间接选择*/
+
+		.next{
+			background-color: purple;
+			width: 200px;
+			height: 100px;
+		}
+		.next+div{
+			background-color: green;
+			width: 300px;
+			height: 100px;
+		}/*通过+号实现后一个元素的样式选择*/
+		.nextmore{
+			background-color: purple;
+			width: 200px;
+			height: 100px;
+		}
+		.nextmore~div{
+			background-color: orange;
+			width: 300px;
+			height: 100px;
+		}/*~可以实现后面所有样式*/
+
+
+		#sanjiaoxing{
+			width: 0px;
+			height: 0px;
+			border-bottom: 40px solid transparent;
+			border-top: 40px solid transparent;
+			border-right: 40px solid aqua;
+			border-left: 40px solid transparent;
+		}/*三角形是通过控制边框实现的*/
+
+
+		.chatleft{
+			margin-left: 40px;
+			width: 400px;
+			line-height: 100px;
+			background-color: pink;
+			border:1px solid pink;
+			border-radius: 10px;
+			position: relative;
+			padding-left: 50px;
+			margin-bottom: 20px;
+		}
+		.chatleft:before {
+			content:"" ;/*一定要求有*/
+			width: 0px;
+			height: 0px;
+			border-bottom: 20px solid transparent;
+			border-left: 30px solid transparent;
+			border-right: 30px solid pink;
+			border-top: 20px solid transparent;
+			position: absolute;
+			top: 20px;
+			left: -60px;
+		}/*使用before或者after来进行伪元素的实现*/
+
+		.chatright{
+			margin-left: 40px;
+			width: 400px;
+			line-height: 100px;
+			background-color: pink;
+			border:1px solid pink;
+			border-radius: 10px;
+			position: relative;
+			padding-left: 50px;
+			margin-bottom: 20px;
+		}
+		.chatright:after {
+			content:"" ;/*一定要求有*/
+			width: 0px;
+			height: 0px;
+			border-bottom: 20px solid transparent;
+			border-left: 30px solid pink;
+			border-right: 30px solid transparent;
+			border-top: 20px solid transparent;
+			position: absolute;
+			top: 20px;
+			left: 451px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div data-width='salmon'></div>
+	<div class="next"></div>
+	<div>超级棒棒糖</div>
+
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li><p>5</p></li>
+		<li>6</li>
+	</ul>
+
+	<div id="sanjiaoxing"></div>
+
+	<div class="chatleft">
+		你好，我是一个小菜鸟！！
+	</div>
+	<div class="chatright">
+		好巧，我也是，很高兴认识你。
+	</div>
+
+
+	<div></div>
+	<div data-width='salmon'></div>
+	<div class="nextmore"></div>
+	<div>超级棒棒糖</div>
+	<div>拥有神奇的力量</div>
+	<div>给我勇气与坚强</div>
+
+	
+</body>
+</html>
